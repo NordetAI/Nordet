@@ -50,13 +50,12 @@
   --font-greek:"EB Garamond","Times New Roman",serif;
   --forest:url("assets/img/foret.jpg");
   --arch:url("assets/img/arche.svg");
-  html {
-  scroll-behavior: smooth;
-}
 }
 
+html{scroll-behavior:smooth}
+
 *,*::before,*::after{box-sizing:border-box}
-html{scroll-behavior:smooth;font-synthesis:none;text-size-adjust:100%}
+html{font-synthesis:none;text-size-adjust:100%}
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
 
 body{
@@ -277,40 +276,40 @@ h2{margin:0 0 .6rem;font:italic 400 clamp(1.7rem,4vw,2.1rem)/1.15 var(--font-bod
         <div class="intro">
           <p>Parfois représenté sur des blasons en héraldique, l'hippogriffe devient un sujet artistique, largement illustré par Gustave Doré au XIX<sup>e</sup> siècle.</p>
         </div>
-        </div>
 
         <div class="rule" aria-hidden="true"><span></span><i></i><span></span></div>
 
         <div class="cols">
           <section id="créature" aria-labelledby="titre-créature">
-            <h2 id="titre-fiche">Créature</h2>
+            <h2 id="titre-créature">Créature</h2>
             <dl class="sheet">
               <div><dt>Autres noms</dt><dd>Hippogryphe</dd></div>
               <div><dt>Groupe</dt><dd>Créature mythologique</dd></div>
               <div><dt>Sous-groupe</dt><dd>Animal légendaire</dd></div>
               <div><dt>Caractéristiques</dt><dd>Mi-cheval, mi-aigle</dd></div>
-              <div><dt>Proches</dt>Griffon<br>Pégase</br></div>
+              <div><dt>Proches</dt><dd>Griffon<br>Pégase</dd></div>
             </dl>
           </section>
 
           <section id="origines" class="origin" aria-labelledby="titre-origines">
-            <h2 id="titre-origine">Origines</h2>
-              <div><dt>Origines</dt><dd>Art de la Grèce antique<br>Cycle carolingien</br></dd></div>
-              <div><dt>Région</dt><dd>Europe</dd></div>
-              <div><dt>Première mention</dt><dd>Représentations artistiques en Grèce antique</dd></div>
+            <h2 id="titre-origines">Origines</h2>
+            <p class="first">L'hippogriffe trouve ses racines dans l'art de la Grèce antique avant de s'imposer durablement dans la littérature du cycle carolingien.</p>
+            <p>Populaire en Europe, il s'inscrit au fil des siècles comme une figure majeure des bestiaires fantastiques et des représentations héraldiques.</p>
+          </section>
         </div>
 
       </div>
     </div>
   </main>
 
- <footer class="foot" id="mainFooter"> 
-  <div class="wrap"> 
-    <a href="#" class="logo logo--sm">Nordet</a> 
-    <p class="copyright">&copy; 2026 Nordet. Tous droits réservés.</p> 
-  </div>
-</footer>
+  <footer class="foot" id="mainFooter"> 
+    <div class="wrap"> 
+      <a href="#" class="logo logo--sm">Nordet</a> 
+      <p class="copyright">&copy; 2026 Nordet. Tous droits réservés.</p> 
+    </div>
+  </footer>
 
 </div>
 
-</body></html>
+</body>
+</html>
