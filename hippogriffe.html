@@ -177,15 +177,10 @@ section[id]{scroll-margin-top:1.5rem}
 .plate .pose{font-style:italic;font-size:1.05rem;color:var(--frost)}
 
 .intro{max-width:38rem;margin:0 auto;text-align:center;text-wrap:balance}
-  .intro .lettrine {
-    font-family: "Nordet Gothic", serif;
-    font-weight: 700;
-    font-size: 4.1em;
-    float: left;
-    line-height: 0.78;
-    padding: .08em .1em 0 0;
-    margin-right: 0.15em;
-    color: var(--ice); /* ou --snow selon votre préférence */
+.intro {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #cbd5e1; /* Ajustez selon votre couleur de texte */
 }
 
 /* Fiche et origine */
@@ -227,6 +222,18 @@ h2{margin:0 0 .6rem;font:italic 400 clamp(1.7rem,4vw,2.1rem)/1.15 var(--font-bod
 .foot .wrap{display:grid;justify-items:center;gap:.2rem;padding-block:1.7rem 1.9rem;text-align:center}
 .logo--sm{font-size:2.9rem}
 .colophon{margin:0;font-style:italic;font-size:1.05rem;color:var(--frost)}
+
+  .dropcap {
+    float: left;                 /* Permet au texte de s'enrouler autour */
+    font-size: 3.8rem;           /* Taille majestueuse de la lettrine */
+    line-height: 0.8;            /* Réduit l'espace vertical par défaut */
+    padding-top: 4px;            
+    padding-right: 8px;          /* Espace exact entre la lettrine et le mot « arfois » */
+    padding-bottom: 0;
+    padding-left: 0;
+    font-family: 'nordet-gothic', serif; /* Votre police gothique */
+    color: #f8fafc;              /* Couleur claire pour bien ressortir sur le fond sombre */
+}
 </style>
 </head>
 
@@ -286,9 +293,9 @@ h2{margin:0 0 .6rem;font:italic 400 clamp(1.7rem,4vw,2.1rem)/1.15 var(--font-bod
           </figure>
         </div>
 
-        <div class="intro">
-        <span class="dropcap">P</span>arfois représenté sur des blasons en héraldique, l'hippogriffe devient un sujet artistique, largement illustré par Gustave Doré au XIX<sup>e</sup> siècle.</p>
-        </div>
+        <p class="intro">
+         <span class="dropcap">P</span>arfois représenté sur des blasons en héraldique, l'hippogriffe devient un sujet artistique, largement illustré par Gustave Doré au XIX<sup>e</sup> siècle.
+        </p>
 
         <div class="rule" aria-hidden="true"><span></span><i></i><span></span></div>
 
