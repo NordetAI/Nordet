@@ -23,7 +23,15 @@
   Aucun or, aucun rouge : seul le personnage apporte une couleur chaude.
   Typo : gothique pour le nom du site, IM Fell English pour le texte, Cinzel pour les petites étiquettes, EB Garamond italique pour le grec.
 */
-@font-face{font-family:"Nordet Gothic";font-weight:700;font-style:normal;font-display:swap;src:url("assets/fonts/nordet-gothic-700.woff2") format("woff2")}
+  
+/* 1. Déclaration de la police gothique */
+@font-face {
+    font-family: 'nordet-gothic';
+    src: url('assets/fonts/nordet-gothic-700.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
 @font-face{font-family:"IM Fell English";font-weight:400;font-style:normal;font-display:swap;src:url("assets/fonts/im-fell-english-400.woff2") format("woff2")}
 @font-face{font-family:"IM Fell English";font-weight:400;font-style:italic;font-display:swap;src:url("assets/fonts/im-fell-english-400-italic.woff2") format("woff2")}
 @font-face{font-family:"Cinzel";font-weight:400;font-style:normal;font-display:swap;src:url("assets/fonts/cinzel-400.woff2") format("woff2")}
@@ -177,13 +185,14 @@ section[id]{scroll-margin-top:1.5rem}
 .plate .pose{font-style:italic;font-size:1.05rem;color:var(--frost)}
 
 .intro{max-width:38rem;margin:0 auto;text-align:center;text-wrap:balance}
+/* 2. Style du paragraphe */
 .intro {
-    max-width: 620px;          /* Restreint la largeur pour garder une ligne de lecture élégante */
-    margin: 0 auto;            /* Centre le bloc de paragraphe dans la carte */
-    font-size: 1.15rem;        
-    line-height: 1.75;         /* Augmente légèrement l'interligne pour respirer */
-    color: #cbd5e1;            
-    text-align: left;          /* INDISPENSABLE : le texte s'enroule proprement à gauche */
+    max-width: 620px;
+    margin: 0 auto;
+    font-size: 1.15rem;
+    line-height: 1.75;
+    color: #cbd5e1;
+    text-align: left; /* Aligne le texte à gauche pour un bel enroulement autour de la lettrine */
 }
 
 
@@ -227,19 +236,22 @@ h2{margin:0 0 .6rem;font:italic 400 clamp(1.7rem,4vw,2.1rem)/1.15 var(--font-bod
 .logo--sm{font-size:2.9rem}
 .colophon{margin:0;font-style:italic;font-size:1.05rem;color:var(--frost)}
 
+/* 3. Style de la lettrine gothique */
 .dropcap {
-    float: left;               /* Fait flotter la lettrine */
-    font-size: 4.2rem;         /* Légèrement agrandie pour un vrai impact visuel */
-    line-height: 0.75;         /* Compresse la hauteur de ligne propre à la lettrine */
-    padding-top: 3px;          
-    padding-right: 12px;       /* Espace parfait entre la lettre et « arfois » */
+    float: left;
+    font-size: 4.2rem;
+    line-height: 0.75;
+    padding-top: 3px;
+    padding-right: 12px;
     padding-bottom: 0;
     padding-left: 0;
-    font-family: 'nordet-gothic', serif; 
-    color: #f8fafc;            
-    transform: translateY(2px);/* Calage optique vertical millimétré */
-    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.7); /* Détache la lettre du fond texturé */
+    font-family: 'nordet-gothic', serif; /* Utilise enfin la vraie police gothique chargée via @font-face */
+    color: #f8fafc;
+    transform: translateY(2px); /* Calage vertical millimétré */
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.7); /* Détache la lettre du fond sombre */
 }
+
+
 </style>
 </head>
 
