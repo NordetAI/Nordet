@@ -15,16 +15,7 @@
   <link rel="preload" href="assets/img/foret.jpg" as="image">
   <link rel="preload" href="assets/img/arche.svg" as="image">
 <style>
-/*
-  Plan de design
-  Mise en page : une page posée sur la forêt, colonne centrale symétrique,
-  trois niches en arc brisé pour les trois animations du personnage, à leur taille d'origine.
-  Palette : uniquement des teintes échantillonnées sur le motif de sapins (marine, ardoise, brume).
-  Aucun or, aucun rouge : seul le personnage apporte une couleur chaude.
-  Typo : gothique pour le nom du site, IM Fell English pour le texte, Cinzel pour les petites étiquettes, EB Garamond italique pour le grec.
-*/
-  
-/* 1. Déclaration de la police gothique */
+/* 1. Déclaration des polices */
 @font-face {
     font-family: 'nordet-gothic';
     src: url('assets/fonts/nordet-gothic-700.woff2') format('woff2');
@@ -61,7 +52,6 @@
 }
 
 html{scroll-behavior:smooth}
-
 *,*::before,*::after{box-sizing:border-box}
 html{font-synthesis:none;text-size-adjust:100%}
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
@@ -89,7 +79,7 @@ section[id]{scroll-margin-top:1.5rem}
   padding-right:max(16px,env(safe-area-inset-right,0px));
 }
 
-/* Nom du site */
+/* Header */
 .logo{
   margin:0;
   font-family:var(--font-gothic);
@@ -101,7 +91,6 @@ section[id]{scroll-margin-top:1.5rem}
   text-shadow:0 2px 0 #02060e,0 0 26px rgba(0,0,0,.55);
 }
 
-/* Bandeau du haut */
 .masthead{position:relative;background:var(--band);border-bottom:1px solid var(--slate-hi)}
 .masthead::after{content:"";position:absolute;left:0;right:0;bottom:5px;height:1px;background:var(--slate)}
 .masthead .wrap{padding-block:clamp(1.3rem,4vw,2.1rem) 1.2rem;text-align:center}
@@ -120,7 +109,7 @@ section[id]{scroll-margin-top:1.5rem}
 }
 .menu a:hover{color:var(--snow);border-bottom-color:var(--frost)}
 
-/* Page centrale */
+/* Structure de la page */
 .stage{padding-block:clamp(1.5rem,4vw,2.75rem)}
 .page{
   position:relative;
@@ -152,11 +141,19 @@ section[id]{scroll-margin-top:1.5rem}
 .greek{margin:0;font:italic 400 1.55rem/1.2 var(--font-greek);letter-spacing:.04em;color:var(--frost)}
 .lead{margin:.55rem 0 0;font-style:italic;font-size:clamp(1.2rem,3vw,1.45rem);color:var(--ice);text-wrap:balance}
 
-.rule{display:flex;align-items:center;gap:.9rem}
+/* Lignes de séparation */
+.rule{
+  display:flex;
+  align-items:center;
+  gap:.9rem;
+  width:100%;
+  max-width:580px;
+  margin:0 auto;
+}
 .rule span{flex:1;height:1px;background:linear-gradient(90deg,transparent,var(--slate-hi) 35%,var(--slate-hi) 65%,transparent)}
 .rule i{width:8px;height:8px;border:1px solid var(--frost);transform:rotate(45deg)}
 
-/* Les trois animations du personnage, à leur taille d'origine (512 px, jamais redimensionnées) */
+/* Cartes / Arches */
 .plates{display:flex;flex-wrap:wrap;justify-content:center;gap:2.5rem 2rem}
 .plate{margin:0;width:min(280px,100%);display:grid;justify-items:center;gap:.85rem}
 .niche{position:relative;width:100%;max-width:280px;height:330px;background:var(--arch) center/100% 100% no-repeat}
@@ -184,33 +181,31 @@ section[id]{scroll-margin-top:1.5rem}
 .plate figcaption{display:grid;justify-items:center;text-align:center;line-height:1.3}
 .plate .pose{font-style:italic;font-size:1.05rem;color:var(--frost)}
 
-.intro{max-width:38rem;margin:0 auto;text-align:center;text-wrap:balance}
-
-/* Conteneur d'intro : fixe la largeur et centre tout le bloc sous l'arc central */
-.intro-block {
-    max-width: 580px;
-    margin: 0 auto;
-}
-
-/* Bloc conteneur parfaitement centré sous l'arc du milieu */
+/* PARAGRAPHE D'INTRO DU MILIEU (CENTRÉ SUR LA PAGE) */
 .intro {
+    width: 100%;
     max-width: 580px;
     margin: 0 auto;
     font-size: 1.15rem;
     line-height: 1.7;
     color: #cbd5e1;
-    text-align: left; /* Pas de justification pour garder un espacement naturel */
+    text-align: left;
 }
 
-/* On s'assure que la règle décorative suit exactement la même largeur */
-.intro + .rule,
-.intro-block + .rule {
-    max-width: 580px;
-    margin: 1.5rem auto 0;
-    width: 100%;
+/* LETTRINE GOTHIC PRÉCISE */
+.dropcap {
+    float: left;
+    font-family: 'nordet-gothic', serif;
+    font-size: 3.8rem;
+    line-height: 0.72;
+    margin-top: 2px;
+    margin-right: 0.35rem;
+    margin-bottom: -0.1rem;
+    color: #f8fafc;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.7);
 }
 
-/* Fiche et origine */
+/* Colonnes bas de page */
 .cols{display:grid;gap:2.5rem}
 h2{margin:0 0 .6rem;font:italic 400 clamp(1.7rem,4vw,2.1rem)/1.15 var(--font-body);color:var(--snow);text-wrap:balance}
 .sheet{margin:0;display:grid}
@@ -220,15 +215,6 @@ h2{margin:0 0 .6rem;font:italic 400 clamp(1.7rem,4vw,2.1rem)/1.15 var(--font-bod
 .sheet dd{margin:0;text-wrap:balance}
 .origin p{margin:0 0 1rem;text-align:left;hyphens:auto}
 .origin p:last-child{margin-bottom:0}
-.origin .first::first-letter{
-  float:left;
-  font-family:var(--font-gothic);
-  font-weight:700;
-  font-size:4.1em;
-  line-height:.78;
-  padding:.08em .1em 0 0;
-  color:var(--ice);
-}
 
 .grc{font-family:var(--font-greek);font-style:italic;color:var(--ice)}
 .origin i,.sheet i,.grc,.nb{hyphens:none;white-space:nowrap}
@@ -243,38 +229,11 @@ h2{margin:0 0 .6rem;font:italic 400 clamp(1.7rem,4vw,2.1rem)/1.15 var(--font-bod
   .sheet>div{grid-template-columns:minmax(0,1fr);gap:.1rem}
 }
 
-/* Bandeau du bas */
+/* Footer */
 .foot{position:relative;background:var(--band);border-top:1px solid var(--slate-hi)}
 .foot::before{content:"";position:absolute;left:0;right:0;top:5px;height:1px;background:var(--slate)}
 .foot .wrap{display:grid;justify-items:center;gap:.2rem;padding-block:1.7rem 1.9rem;text-align:center}
 .logo--sm{font-size:2.9rem}
-.colophon{margin:0;font-style:italic;font-size:1.05rem;color:var(--frost)}
-
-/* La lettrine moderne : calage optique strict */
-.dropcap {
-    float: left;
-    font-family: 'nordet-gothic', serif;
-    font-size: 3.8rem;
-    line-height: 0.75;
-    margin-top: 2px;
-    margin-right: 0.35rem; /* Espace serré et contrôlé avec le "n" */
-    margin-bottom: -0.2rem;
-    color: #f8fafc;
-    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.7);
-}
-
-/* S'assure que les séparateurs avec le losange respectent la même largeur au centre */
-.page > .rule {
-    max-width: 620px;
-    margin: 0 auto;
-    width: 100%;
-}
-
-.hippogriffe-container, #hippogriffe-pos {
-    position: absolute;
-  
-    transform: translate(-50%, -50%);
-}
 </style>
 </head>
 
@@ -288,7 +247,6 @@ h2{margin:0 0 .6rem;font:italic 400 clamp(1.7rem,4vw,2.1rem)/1.15 var(--font-bod
       <nav class="menu" aria-label="Navigation principale">
         <ul>
           <li><a href="#hippogriffe">Hippogriffe</a></li>
-          
           <li><a href="#créature">Créature</a></li>
           <li><a href="#origines">Origines</a></li>
         </ul>
@@ -334,18 +292,17 @@ h2{margin:0 0 .6rem;font:italic 400 clamp(1.7rem,4vw,2.1rem)/1.15 var(--font-bod
           </figure>
         </div>
 
-        <p class="intro">
-        <span class="dropcap">E</span>n 1879, Gustave Doré contribue à faire connaître l'hippogriffe à travers ses illustrations pour le <em>Roland furieux</em>. Déjà présent dans l'imaginaire héraldique, cet animal légendaire traverse ainsi les siècles, de la littérature chevaleresque aux représentations artistiques.</p>
+        <p class="intro"><span class="dropcap">E</span>n 1879, Gustave Doré contribue à faire connaître l'hippogriffe à travers ses illustrations pour le <em>Roland furieux</em>. Déjà présent dans l'imaginaire héraldique, cet animal légendaire traverse ainsi les siècles, de la littérature chevaleresque aux représentations artistiques.</p>
+
         <div class="rule" aria-hidden="true"><span></span><i></i><span></span></div>
 
         <div class="cols">
           <section id="créature" aria-labelledby="titre-créature">
             <h2 id="titre-créature">Créature</h2>
             <dl class="sheet">
-              
               <div><dt>Groupe</dt><dd>Créature mythologique</dd></div>
               <div><dt>Sous-groupe</dt><dd>Animal légendaire</dd></div>
-              <div><dt>Caractéristiques</dt><dd>Mi-cheval, mi-aigle</dd></div>
+              <div><dt>Caractéristiques</dt><dd>À tête d'aigle et corps de cheval</dd></div>
               <div><dt>Proche</dt><dd>Griffon</dd></div>
             </dl>
           </section>
