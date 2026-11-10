@@ -192,17 +192,18 @@ section[id]{scroll-margin-top:1.5rem}
     margin: 0 auto;
 }
 
-/* Style du texte : aligné à gauche pour un enroulement naturel sans grands trous */
+/* Bloc conteneur parfaitement centré sous l'arc du milieu */
 .intro {
-    margin: 0;
+    max-width: 580px;
+    margin: 0 auto;
     font-size: 1.15rem;
-    line-height: 1.75;
+    line-height: 1.7;
     color: #cbd5e1;
-    text-align: left;
-    hyphens: auto;
+    text-align: left; /* Pas de justification pour garder un espacement naturel */
 }
 
-/* Alignement parfait de la ligne séparatrice sous le bloc centré */
+/* On s'assure que la règle décorative suit exactement la même largeur */
+.intro + .rule,
 .intro-block + .rule {
     max-width: 580px;
     margin: 1.5rem auto 0;
@@ -249,16 +250,15 @@ h2{margin:0 0 .6rem;font:italic 400 clamp(1.7rem,4vw,2.1rem)/1.15 var(--font-bod
 .logo--sm{font-size:2.9rem}
 .colophon{margin:0;font-style:italic;font-size:1.05rem;color:var(--frost)}
 
-/* Lettrine gothique ultra-ajustée au mot "En" */
+/* La lettrine moderne : calage optique strict */
 .dropcap {
     float: left;
     font-family: 'nordet-gothic', serif;
-    font-size: 4.1rem;
-    line-height: 0.65;
-    padding-top: 3px;
-    padding-right: 2px;   /* Supprime l'espace entre le E et le n */
-    margin-right: 4px;    /* Espace minimal avec le reste de la phrase */
-    margin-left: -3px;    /* Aligne le bord du E sur la marge gauche */
+    font-size: 3.8rem;
+    line-height: 0.75;
+    margin-top: 2px;
+    margin-right: 0.35rem; /* Espace serré et contrôlé avec le "n" */
+    margin-bottom: -0.2rem;
     color: #f8fafc;
     text-shadow: 0 2px 8px rgba(0, 0, 0, 0.7);
 }
