@@ -186,15 +186,27 @@ section[id]{scroll-margin-top:1.5rem}
 
 .intro{max-width:38rem;margin:0 auto;text-align:center;text-wrap:balance}
 
-/* Bloc d'introduction centré sous les niches */
-.intro {
-    max-width: 620px;
+/* Conteneur d'intro : fixe la largeur et centre tout le bloc sous l'arc central */
+.intro-block {
+    max-width: 580px;
     margin: 0 auto;
+}
+
+/* Style du texte : aligné à gauche pour un enroulement naturel sans grands trous */
+.intro {
+    margin: 0;
     font-size: 1.15rem;
     line-height: 1.75;
     color: #cbd5e1;
-    text-align: justify; /* Aligne proprement à gauche et à droite pour équilibrer le bloc */
-    hyphens: auto;       /* Évite les grands espaces entre les mots */
+    text-align: left;
+    hyphens: auto;
+}
+
+/* Alignement parfait de la ligne séparatrice sous le bloc centré */
+.intro-block + .rule {
+    max-width: 580px;
+    margin: 1.5rem auto 0;
+    width: 100%;
 }
 
 /* Fiche et origine */
@@ -237,18 +249,18 @@ h2{margin:0 0 .6rem;font:italic 400 clamp(1.7rem,4vw,2.1rem)/1.15 var(--font-bod
 .logo--sm{font-size:2.9rem}
 .colophon{margin:0;font-style:italic;font-size:1.05rem;color:var(--frost)}
 
+/* Lettrine gothique ultra-ajustée au mot "En" */
 .dropcap {
     float: left;
     font-family: 'nordet-gothic', serif;
-    font-size: 4rem;
-    line-height: 0.7;
-    padding-top: 0px;     /* Supprime le décalage vers le haut */
-    padding-right: 3px;
-    margin-right: 2px;
-    margin-left: -2px;
+    font-size: 4.1rem;
+    line-height: 0.65;
+    padding-top: 3px;
+    padding-right: 2px;   /* Supprime l'espace entre le E et le n */
+    margin-right: 4px;    /* Espace minimal avec le reste de la phrase */
+    margin-left: -3px;    /* Aligne le bord du E sur la marge gauche */
     color: #f8fafc;
     text-shadow: 0 2px 8px rgba(0, 0, 0, 0.7);
-    transform: translateY(4px); /* Descend subtilement la lettre pour caler son sommet pile sur la hauteur d'ex-cap de la ligne */
 }
 
 /* S'assure que les séparateurs avec le losange respectent la même largeur au centre */
