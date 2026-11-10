@@ -237,18 +237,18 @@ h2{margin:0 0 .6rem;font:italic 400 clamp(1.7rem,4vw,2.1rem)/1.15 var(--font-bod
 .logo--sm{font-size:2.9rem}
 .colophon{margin:0;font-style:italic;font-size:1.05rem;color:var(--frost)}
 
-/* Lettrine parfaitement calée contre le texte */
 .dropcap {
     float: left;
     font-family: 'nordet-gothic', serif;
     font-size: 4rem;
     line-height: 0.7;
-    padding-top: 2px;
-    padding-right: 3px;   /* Espace réduit pour coller la lettrine au "n" de "En" */
+    padding-top: 0px;     /* Supprime le décalage vers le haut */
+    padding-right: 3px;
     margin-right: 2px;
-    margin-left: -2px;    /* Aligne le bord gauche de la lettre sur la marge */
+    margin-left: -2px;
     color: #f8fafc;
     text-shadow: 0 2px 8px rgba(0, 0, 0, 0.7);
+    transform: translateY(4px); /* Descend subtilement la lettre pour caler son sommet pile sur la hauteur d'ex-cap de la ligne */
 }
 
 /* S'assure que les séparateurs avec le losange respectent la même largeur au centre */
