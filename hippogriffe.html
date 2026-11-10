@@ -186,16 +186,16 @@ section[id]{scroll-margin-top:1.5rem}
 
 .intro{max-width:38rem;margin:0 auto;text-align:center;text-wrap:balance}
 
-/* Style du paragraphe d'intro */
+/* Bloc d'introduction centré sous les niches */
 .intro {
     max-width: 620px;
     margin: 0 auto;
     font-size: 1.15rem;
     line-height: 1.75;
     color: #cbd5e1;
-    text-align: left; /* Garantit l'alignement propre du texte sous la lettrine */
+    text-align: justify; /* Aligne proprement à gauche et à droite pour équilibrer le bloc */
+    hyphens: auto;       /* Évite les grands espaces entre les mots */
 }
-
 
 /* Fiche et origine */
 .cols{display:grid;gap:2.5rem}
@@ -237,18 +237,25 @@ h2{margin:0 0 .6rem;font:italic 400 clamp(1.7rem,4vw,2.1rem)/1.15 var(--font-bod
 .logo--sm{font-size:2.9rem}
 .colophon{margin:0;font-style:italic;font-size:1.05rem;color:var(--frost)}
 
-/* Style de la lettrine gothique resserrée */
+/* Lettrine parfaitement calée contre le texte */
 .dropcap {
     float: left;
-    font-size: 4rem;
-    line-height: 0.7;        /* Réduit la hauteur pour coller à la ligne du dessous */
-    padding-top: 2px;
-    padding-right: 3px;      /* RÉDUIT : Rapproche la lettre E du "n" */
-    margin-right: 2px;       /* RÉDUIT : Empêche l'espace indésirable */
-    margin-left: -2px;       /* LÉGER DÉCALAGE : Aligne parfaitement le bord gauche */
     font-family: 'nordet-gothic', serif;
+    font-size: 4rem;
+    line-height: 0.7;
+    padding-top: 2px;
+    padding-right: 3px;   /* Espace réduit pour coller la lettrine au "n" de "En" */
+    margin-right: 2px;
+    margin-left: -2px;    /* Aligne le bord gauche de la lettre sur la marge */
     color: #f8fafc;
     text-shadow: 0 2px 8px rgba(0, 0, 0, 0.7);
+}
+
+/* S'assure que les séparateurs avec le losange respectent la même largeur au centre */
+.page > .rule {
+    max-width: 620px;
+    margin: 0 auto;
+    width: 100%;
 }
 
 .hippogriffe-container, #hippogriffe-pos {
