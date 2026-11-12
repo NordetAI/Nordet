@@ -138,12 +138,21 @@ a:focus-visible{outline:2px solid var(--ice);outline-offset:4px}
 .rule span{flex:1;height:1px;background:linear-gradient(90deg,transparent,var(--slate-hi) 35%,var(--slate-hi) 65%,transparent)}
 .rule i{width:8px;height:8px;border:1px solid var(--frost);transform:rotate(45deg)}
 
-/* Grille des créatures du Bestiaire */
+/* Grille des créatures du Bestiaire modifiée */
 .bestiary-grid{
   display:grid;
-  grid-template-columns:repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: repeat(2, minmax(280px, 320px));
+  justify-content: center;
   gap:2.5rem;
   margin-top:1rem;
+}
+
+/* Permet à la dernière carte (l'hippogriffe) de s'étaler sur les 2 colonnes et de se centrer */
+.bestiary-grid > .creature-card:last-child:nth-child(odd) {
+  grid-column: 1 / -1;
+  justify-self: center;
+  width: 100%;
+  max-width: 320px;
 }
 
 .creature-card{
@@ -225,7 +234,7 @@ a:focus-visible{outline:2px solid var(--ice);outline-offset:4px}
 <div class="site" lang="fr">
 
   <header class="masthead">    
-      <div class="wrap">      
+      <div class="wrap">    
     
       <p class="logo">Perséides</p>
     
@@ -245,7 +254,6 @@ a:focus-visible{outline:2px solid var(--ice);outline-offset:4px}
 
         <div class="bestiary-grid">
           
-
           <a href="lutin.html" class="creature-card">
             <div class="creature-niche">
               <img src="assets/img/lutin-repos.gif" width="512" height="512" alt="Lutin au repos">
@@ -257,13 +265,12 @@ a:focus-visible{outline:2px solid var(--ice);outline-offset:4px}
 
           <a href="nainjaune.html" class="creature-card">
             <div class="creature-niche">
-              <img src="assets/img/nain-jaune-repos.gif" width="512" height="512" alt="Lutin au repos">
+              <img src="assets/img/nain-jaune-repos.gif" width="512" height="512" alt="Nain jaune au repos">
             </div>
             <h2>Le Nain jaune</h2>
             <p>Personnage légendaire de très petite taille.</p>
             <span class="btn-consult">Consulter la fiche &rarr;</span>
           </a>
-          <br>
           
           <a href="hippogriffe.html" class="creature-card">
             <div class="creature-niche">
